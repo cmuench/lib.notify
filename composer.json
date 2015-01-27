@@ -1,0 +1,23 @@
+{
+  "name": "cmuench/lib.notify",
+  "description": "Linux desktop notification library",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Christian Münch",
+      "email": "christian@muench-worms.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Cmuench\\LibNotify\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.4",
+    "myclabs/php-enum": "1.2.*",
+    "symfony/process": "2.6.*"
+  }
+}
