@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuench\LibNotify\Icon\Library\Humanity;
+namespace CMuench\LibNotify\Icon\Library\Humanity;
 
 class Actions
 {

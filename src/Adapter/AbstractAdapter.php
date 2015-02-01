@@ -1,43 +1,59 @@
 <?php
 
-namespace Cmuench\LibNotify\Adapter;
+namespace CMuench\LibNotify\Adapter;
 
-use Cmuench\LibNotify\Urgency\Level;
+use CMuench\LibNotify\Urgency\Level;
 
 abstract class AbstractAdapter
 {
     /**
      * @var string
      */
-    protected $message;
+    protected $summary = '';
 
     /**
      * @var string
      */
-    protected $icon;
+    protected $body = '';
 
     /**
      * @var string
      */
-    protected $category;
+    protected $icon = '';
+
+    /**
+     * @var string
+     */
+    protected $category = '';
 
     /**
      * @var Level
      */
-    protected $urgency;
+    protected $urgency = Level::NORMAL;
 
     /**
      * @var string
      */
-    protected $appName;
+    protected $appName = '';
 
     /**
-     * @param string $message
+     * @param string $summary
      * @return $this
      */
-    public function setMessage($message)
+    public function setSummary($summary)
     {
-        $this->message = $message;
+        $this->summary = $summary;
+
+        return $this;
+    }
+
+    /**
+     * @param string $body
+     * @return $this
+     */
+    public function setBody($body)
+    {
+        $this->body = $body;
 
         return $this;
     }

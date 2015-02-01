@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmuench\LibNotify;
+namespace CMuench\LibNotify;
 
-use Cmuench\LibNotify\Urgency\Level;
+use CMuench\LibNotify\Urgency\Level;
 
 class Client
 {
@@ -14,31 +14,35 @@ class Client
     /**
      * @type string
      */
-    const DEFAULT_ADAPTER_CLASS = '\Cmuench\LibNotify\Adapter\NotifySendAdapter';
+    const DEFAULT_ADAPTER_CLASS = '\CMuench\LibNotify\Adapter\NotifySendAdapter';
 
     public function __construct(Adapter\Adapter $adapter = null)
     {
-        if (!$adapter) {
+        $this->adapter = $adapter;
+
+        if (!$this->adapter) {
             $adapterClass = self::DEFAULT_ADAPTER_CLASS;
             $this->adapter = new $adapterClass();
         }
     }
 
     /**
-     * @param $message
+     * @param string $summary
+     * @param string $body
      * @param Level $urgency default "normal"
      * @param string $iconPath
      * @param string $category
      * @param string $appName
      */
-    public function send($message, $urgency = null, $iconPath = null, $category = null, $appName = null)
+    public function send($body, $summary = '', $urgency = '', $iconPath = '', $category = '', $appName = '')
     {
         if (!$urgency) {
             $urgency = Level::NORMAL();
         }
 
         $this->adapter
-            ->setMessage($message)
+            ->setSummary($summary)
+            ->setBody($body)
             ->setAppName($appName)
             ->setCategory($category)
             ->setUrgency($urgency)

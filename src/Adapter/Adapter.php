@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmuench\LibNotify\Adapter;
+namespace CMuench\LibNotify\Adapter;
 
-use Cmuench\LibNotify\Urgency\Level;
+use CMuench\LibNotify\Urgency\Level;
 
 interface Adapter
 {
@@ -12,10 +12,16 @@ interface Adapter
     public function send();
 
     /**
-     * @param string $message
+     * @param $summary
      * @return $this
      */
-    public function setMessage($message);
+    public function setSummary($summary);
+
+    /**
+     * @param string $body
+     * @return $this
+     */
+    public function setBody($body);
 
     /**
      * @param string $appName

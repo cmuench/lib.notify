@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuench\LibNotify\Urgency;
+namespace CMuench\LibNotify\Urgency;
 
 use MyCLabs\Enum\Enum;
 

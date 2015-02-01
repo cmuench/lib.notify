@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuench\LibNotify\Adapter;
+namespace CMuench\LibNotify\Adapter;
 
 use Symfony\Component\Process\ProcessBuilder;
 
@@ -31,7 +31,8 @@ class NotifySendAdapter extends AbstractAdapter implements Adapter
             $processBuilder->add('--app-name=' . $this->appName);
         }
 
-        $processBuilder->add($this->message);
+        $processBuilder->add($this->summary);
+        $processBuilder->add($this->body);
 
         if ($processBuilder->getProcess()->run() == 0) {
             return true;

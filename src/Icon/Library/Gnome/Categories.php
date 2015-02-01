@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuench\LibNotify\Icon\Library\Gnome;
+namespace CMuench\LibNotify\Icon\Library\Gnome;
 
 class Categories
 {

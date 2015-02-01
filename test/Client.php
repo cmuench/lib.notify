@@ -2,12 +2,14 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use \Cmuench\LibNotify;
+use \CMuench\LibNotify;
+use CMuench\LibNotify\Adapter\DbusModuleAdapter;
 
-$client = new LibNotify\Client();
+$client = new LibNotify\Client(new DbusModuleAdapter());
 
 $client->send(
-    'test http://www.google.de',
+    'test: ' . time(),
+    'body',
     LibNotify\Urgency\Level::CRITICAL(),
     LibNotify\Icon\Library\Gnome\Status::DIALOG_WARNING
 );
