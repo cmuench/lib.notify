@@ -6,7 +6,9 @@ tool "notify-send".
 
 ## Installation
 
-    composer.phar require "cmuench/lib.notify=dev-master"
+```sh
+composer.phar require "cmuench/lib.notify=dev-master"
+```
     
 ## External tool installation
     
@@ -14,7 +16,9 @@ tool "notify-send".
     
 Can be installed via apt (universal package)    
     
-    sudo apt-get install libnotify-bin
+```sh    
+sudo apt-get install libnotify-bin
+```
 
 ## Supported Adapters
 
