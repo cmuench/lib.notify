@@ -23,23 +23,24 @@ Can be installed via apt (universal package)
 
 ## Example-Usage
 
-    <?php
-    
-    require_once __DIR__ . '/../vendor/autoload.php';
-    
-    use \CMuench\LibNotify;
-    use \CMuench\LibNotify\Adapter\DbusModuleAdapter; // dbus adapter if used
-    
-    $client = new LibNotify\Client();
-    // $client = new LibNotify\Client(new DbusModuleAdapter());  // use php dbus module
-    
-    $client->send(
-        'Summary',
-        'Body text',
-        LibNotify\Urgency\Level::CRITICAL(),
-        LibNotify\Icon\Library\Gnome\Status::DIALOG_WARNING
-    );
+```php
+<?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use \CMuench\LibNotify;
+use \CMuench\LibNotify\Adapter\DbusModuleAdapter; // dbus adapter if used
+
+$client = new LibNotify\Client();
+// $client = new LibNotify\Client(new DbusModuleAdapter());  // use php dbus module
+
+$client->send(
+    'Summary',
+    'Body text',
+    LibNotify\Urgency\Level::CRITICAL(),
+    LibNotify\Icon\Library\Gnome\Status::DIALOG_WARNING
+);
+```
 
 ## Icon Library
 
